@@ -1,7 +1,7 @@
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:flutter/services.dart';
-
 import 'dart:js' as js;
+
+import 'package:flutter/services.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 class FlutterSingularWeb {
   /// Constructs a FlutterSingularWeb
@@ -22,8 +22,13 @@ class FlutterSingularWeb {
     switch (call.method) {
       case 'start':
         Map<Object?, Object?> args = call.arguments as Map<Object?, Object?>;
-        // dynamic config = args['config'];
-        var config = js.JsObject(js.context['SingularConfig'], ['unflation_4fd63cb3', 'adbcbfa4429a447e306c40a0e2ec86f7', 'com.subscriptionstopper']);
+        final String apiKey = args['apiKey'] as String;
+        final String secretKey = args['secretKey'] as String;
+        var config = js.JsObject(js.context['SingularConfig'], [
+          apiKey,
+          secretKey,
+          js.context['singularProductId'],
+        ]);
         js.context['singularSdk'].callMethod('init', [config]);
         break;
       case 'event':
@@ -49,10 +54,8 @@ class FlutterSingularWeb {
       default:
         throw PlatformException(
           code: 'Unimplemented',
-          details:
-          'singular_flutter for web doesn\'t implement \'${call.method}\'',
+          details: 'singular_flutter for web doesn\'t implement \'${call.method}\'',
         );
     }
   }
-
 }

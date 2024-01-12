@@ -20,7 +20,10 @@ A Flutter plugin for Singular SDK.
 
 - Android
 - iOS
+- Web
 
+
+window.singularProductId = 'YOUR PRODUCT ID';
 ---
 
 ### This plugin is built for
