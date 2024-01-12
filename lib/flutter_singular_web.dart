@@ -31,6 +31,19 @@ class FlutterSingularWeb {
         final String eventName = args['eventName'] as String;
         js.context['singularSdk'].callMethod('event', [eventName]);
         break;
+      case 'eventWithArgs':
+        Map<Object?, Object?> args = call.arguments as Map<Object?, Object?>;
+        final String eventName = args['eventName'] as String;
+        final Map<Object?, Object?> eventArgs = args['args'] as Map<Object?, Object?>;
+        js.context['singularSdk'].callMethod('event', [eventName, eventArgs]);
+        break;
+      case 'customRevenue':
+        Map<Object?, Object?> args = call.arguments as Map<Object?, Object?>;
+        final String eventName = args['eventName'] as String;
+        final String currency = args['currency'] as String;
+        final double amount = args['amount'] as double;
+        js.context['singularSdk'].callMethod('revenue', [eventName, currency, amount]);
+        break;
       case 'setWrapperNameAndVersion':
         break;
       default:
