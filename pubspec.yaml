@@ -10,11 +10,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -32,3 +33,6 @@ flutter:
       ios:
         pluginClass: SingularSDK
         package: com.singular.flutter_sdk
+      web:
+        pluginClass: FlutterSingularWeb
+        fileName: flutter_singular_web.dart
