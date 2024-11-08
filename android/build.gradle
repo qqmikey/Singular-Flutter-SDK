@@ -23,6 +23,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.singular.sdk.flutter_sdk'
+    }
     compileSdkVersion 30
 
     defaultConfig {
@@ -31,5 +34,5 @@ android {
 }
 
 dependencies {
-    implementation 'com.singular.sdk:singular_sdk:12.4.0'
+    implementation 'com.singular.sdk:singular_sdk:12.5.5'
 }

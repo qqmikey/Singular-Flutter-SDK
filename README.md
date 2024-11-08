@@ -28,9 +28,9 @@ window.singularProductId = 'YOUR PRODUCT ID';
 
 ### This plugin is built for
 
-- iOS SingularSDK **v12.1.1**
+- iOS SingularSDK **v12.4.2**
 
-- Android SingularSDK **v12.2.0**
+- Android SingularSDK **v12.5.5**
 
 ---
 
@@ -40,7 +40,7 @@ You can add Singular Plugin to your Flutter app by adding following to your `pub
 
 ```yaml
 dependencies:
-  singular_flutter_sdk: ^1.2.1
+  singular_flutter_sdk: ^1.4.0
 ```
 
 Then navigate to your project in the terminal and run:

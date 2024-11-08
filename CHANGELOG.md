@@ -1,3 +1,18 @@
+## 1.4.0
+- Adds support for iOS Privacy Manifest (xcprivacy file).
+- Updates underlying native iOS SDK to 12.4.2, and Android to 12.5.5
+
+## 1.3.3
+Bug fix.
+
+## 1.3.2
+Bug fix.
+
+## 1.3.1
+1. Improve support for SDID.
+2. Support for attribution callback.
+3. Fix uninstall token.
+
 ## 1.2.1
 Bug fix
 
