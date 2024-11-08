@@ -6,10 +6,6 @@ buildscript {
         google()
         jcenter()
     }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
-    }
 }
 
 rootProject.allprojects {
@@ -23,16 +19,15 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    if (project.android.hasProperty("namespace")) {
-        namespace 'com.singular.sdk.flutter_sdk'
-    }
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         minSdkVersion 16
     }
+
+    namespace 'com.singular.flutter_sdk'
 }
 
 dependencies {
-    implementation 'com.singular.sdk:singular_sdk:12.5.5'
+    implementation 'com.singular.sdk:singular_sdk:12.6.0'
 }
